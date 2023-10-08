@@ -1,0 +1,7 @@
+# SQLite configurations
+
+# Show column names in SQLite:
+.headers on
+
+# Columnar mode
+.mode column
