@@ -28,6 +28,7 @@ insert into t values (strftime('%s', '2023-01-01'));
 insert into t values (strftime('%s', '2022-01-01'));
 insert into t values (strftime('%s', '2021-01-01'));
 select datetime(date, 'auto') from t where date >= strftime('%s', '2022-01-01') and date < strftime('%s', '2023-01-01');
+
 datetime(date, 'auto')
 ---------------------------
 2022-01-01 00:00:00
@@ -44,6 +45,7 @@ insert into t values (julianday('2021-01-01'));
 
 -- use datetime() to format output as a date
 select datetime(date) from t where date >= julianday('2022-01-01') and date < julianday('2023-01-01');
+
 datetime(date)
 -------------------
 2022-01-01 00:00:00

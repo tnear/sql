@@ -21,6 +21,7 @@ If `asc` or `desc` are left off, the default order is *ascending*.
 `> sqlite3 tutorial/media.db`
 ```sql
 sqlite> select * from tracks order by Milliseconds desc limit 4;
+
 TrackId  Name                         Milliseconds  Bytes       Price
 -------  ---------------------------  ------------  ----------  -----
 2820     Occupation / Precipice       5286953       1054423946  1.99
