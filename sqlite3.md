@@ -13,7 +13,7 @@ Syntax: `sqlite3 [options] [databaseFile] [SQL]`
 ### Exit sqlite3 CLI
 `sqlite> .exit  # or .quit or Ctrl+D`
 
-### .tables: = list tables
+### .tables: list tables
 ```sql
 sqlite> .tables
 table1 table2
@@ -69,3 +69,11 @@ id  name
 OR, from terminal:
 
 `$ sqlite3 db.db '.read file.sql'`
+
+### .version: version information
+```sql
+sqlite> .version
+SQLite 3.43.1 2023-09-11 12:01:27 2d3a40c05c49e1a49264912b1a05bc2143ac0e7c3df588276ce80a4cbc9bd1b0
+zlib version 1.2.11
+gcc-5.2.0 (32-bit)
+```
