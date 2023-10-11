@@ -1,13 +1,44 @@
 # Date/time
 
-SQLite does not have a date/time class. Instead it supports:
-- text: ex: ('YYYY-MM-DD HH:MM:SS.SSS')
-- real: (floating-point): the number of days since November 24, 4714 B.C (Julian date)
-- integer: the number of seconds since January 1st, 1970
+https://www.sqlite.org/lang_datefunc.html
 
-## Example: get all 2022 years
+SQLite does not have a dedicated date/time data type. Instead, it supports:
+- Text: ex: `('YYYY-MM-DD HH:MM:SS.SSS')`
+- Real: (floating-point): the number of days since November 24, 4714 B.C (Julian date)
+- Integer: the number of seconds since January 1st, 1970
 
-### Date as text example
+## Specifiers
+
+| Specifier | Meaning                        |
+|-----------|--------------------------------|
+| %d        | day of month: 00               |
+| %f        | fractional seconds: SS.SSS     |
+| %H        | hour: 00-24                    |
+| %j        | day of year: 001-366           |
+| %J        | Julian day number (fractional) |
+| %m        | month: 01-12                   |
+| %M        | minute: 00-59                  |
+| %s        | seconds since 1970-01-01       |
+| %S        | seconds: 00-59                 |
+| %w        | day of week 0-6 with Sunday==0 |
+| %W        | week of year: 00-53            |
+| %Y        | year: 0000-9999                |
+| %%        | % (escape)                     |
+
+### Format current date as `YYYY-MM/DD`
+`%Y` is year, `%m` is month, `%d` is day:
+
+```sql
+sqlite> select strftime('%Y-%m/%d');
+
+strftime('%Y-%m/%d')
+--------------------
+2023-10/11
+```
+
+## Get all 2022 years
+
+### Date as `text`
 ```sql
 sqlite> create table t (date text);
 insert into t values ('2023-10-08');
@@ -20,7 +51,7 @@ date
 2022-01-01
 ```
 
-### Date as integer example
+### Date as `integer`
 ```sql
 
 sqlite> create table t (date integer);
@@ -34,7 +65,7 @@ datetime(date, 'auto')
 2022-01-01 00:00:00
 ```
 
-### Date as real example (less common)
+### Date as `real` (less common)
 
 ```sql
 

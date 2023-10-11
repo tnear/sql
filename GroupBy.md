@@ -70,3 +70,16 @@ AlbumId  sum(Milliseconds)
 231      63289631         
 228      59780268         
 ```
+
+## Multiple `group by` columns
+```sql
+select
+   MediaTypeId, 
+   GenreId, 
+   count(TrackId)
+from
+   tracks
+group by
+   MediaTypeId, 
+   GenreId;
+```
