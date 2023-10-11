@@ -6,14 +6,21 @@ A `having` clause dictates that only rows should be returned when they meet the 
 
 ### Get albums with more than 25 songs
 
-First, this query must group by albumId so that all songs belonging to that ID are grouped together. Then, use `having` to filter for albums with more than 25 songs.
+First, this query must group by albumId so that all songs belonging to that ID are grouped together. Then, use `having` to filter for albums with between 26 and 60 songs.
 
 `> sqlite3 tutorial/media.db`
 ```sql
-select albumId, count(albumId)
+select albumId, count(trackId)
 from tracks
 group by albumId
-having count(albumId) > 25;
+having count(trackId) between 26 and 60;
+
+AlbumId  count(trackId)
+-------  --------------
+23       34
+73       30
+141      57
+229      26
 
 AlbumId  count(albumId)
 -------  --------------
