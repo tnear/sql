@@ -30,11 +30,11 @@ select * from Tracks
 where AlbumId in
     (select AlbumId from Albums where ArtistId = 248);
 
-TrackId  Name                         AlbumId  Composer        
--------  ---------------------------  -------  ----------------
-3450     Peer Gynt Suite No.1, Op.46  316      Edvard Grieg    
-3454     Symphony No. 41 in C Major   320      Mozart          
-3491     Le Sacre Du Printemps: I.iv  320      Igor Stravinsky 
+TrackId  Name                         AlbumId  Composer
+-------  ---------------------------  -------  ---------------
+3450     Peer Gynt Suite No.1, Op.46  316      Edvard Grieg
+3454     Symphony No. 41 in C Major   320      Mozart
+3491     Le Sacre Du Printemps: I.iv  320      Igor Stravinsky
 ```
 
 ### `not in`

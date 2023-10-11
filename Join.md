@@ -60,19 +60,19 @@ sqlite>  select artists.Name, albums.Title from artists left join albums on arti
 
 Name           Title
 -------------  -------------------
-A Cor Do Som  
+A Cor Do Som
 AC/DC          For Those About
 AC/DC          Let There Be Rock
 ```
 
 ### Find all artists who have zero albums
-The artists and albums tables are linked by `ArtistId`. A left join of the two (`artists` on the left) will show albums for all artists and insert `NULL` when there is no match. 
+The artists and albums tables are linked by `ArtistId`. A left join of the two (`artists` on the left) will show albums for all artists and insert `NULL` when there is no match.
 
 This query uses `is null` to filter the results.
 
 ```sql
 select
-   artists.ArtistId, 
+   artists.ArtistId,
    AlbumId
 from
    artists
@@ -97,7 +97,7 @@ Find the Cartesian product of: `A = {1, 2} B = {a, b, c}`
 Note that `A x B != B x A`. For example, `B x A` would include (*a*, *1*) which is not in `A x B`.
 
 ### Cardinality
-The number of elements in the Cartesian product equals the number of elements in each set multiplied by each other. 
+The number of elements in the Cartesian product equals the number of elements in each set multiplied by each other.
 ```
 |A x B| = |A|*|B|
 |A x B| = |{1,2}| * |{a,b,c}| = 2 * 3 = 6
@@ -135,10 +135,44 @@ Suit has Clubs, Diamonds, Hearts, Spades (4 rows)
 
 This query produces a 52-card deck:
 ```sql
-SELECT rank,
+select rank,
        suit
-  FROM ranks
-       CROSS JOIN
+  from ranks
+       cross join
        suits
-ORDER BY suit;
+order by suit;
+```
+
+## Self-join
+A self-join is when a table is joined with itself using either `inner join` or `left join`. Doing a self join requires two table aliases for the same table.
+
+Self-join is useful for querying parent/child relationships.
+
+### Get all direct reports for all managers
+
+The employees table has ReportsTo column if they have a manager:
+
+`> sqlite3 tutorial/media.db`
+```sql
+sqlite> select * from employees limit 1;
+Id  LastName  FirstName  Title            ReportsTo
+--  --------  ---------  ---------------  ----------
+1   Adams     Andrew     General Manager  <null>
+2   Edwards   Nancy      Sales Manager    1
+3   Peacock   Jane       Sales Agent      2
+```
+
+To get this information, create two aliases for the same table then join EmployeeId with ReportsTo:
+
+```sql
+sqlite> select m.firstname, m.lastname, r.firstname, r.lastname
+from employees m, employees r
+where m.employeeid = r.reportsto;
+
+Manager        Report
+-------------  ----------------
+Andrew Adams   Nancy Edwards
+Nancy Edwards  Jane Peacock
+Nancy Edwards  Margaret Park
+Nancy Edwards  Steve Johnson
 ```

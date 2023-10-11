@@ -20,7 +20,7 @@ GenreId  Name
 18       Science Fiction
 20       Sci Fi & Fantasy
 ```
- 
+
 ### Get all genres with 'a' as the second character
 `> sqlite3 tutorial/media.db`
 ```sql
