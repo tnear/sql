@@ -2,7 +2,17 @@
 
 https://www.sqlitetutorial.net/sqlite-create-table/
 
-### Create table (simple)
+### Syntax
+```sql
+create table [if not exists] [schema_name].table_name (
+	column_1 data_type primary key,
+   	column_2 data_type not null,
+	column_3 data_type default 0,
+	table_constraints
+);
+```
+
+### Create table (basic)
 ```sql
 sqlite> create table t (date text);
 ```
@@ -13,7 +23,6 @@ sqlite> create table t (date text);
 create table contacts (
     contact_id integer primary key,
     first_name text not null,
-    last_name  text not null,
     email      text not null unique,
     phone      text not null unique
 );
