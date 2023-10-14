@@ -64,22 +64,22 @@ order by sum(Milliseconds) desc;
 
 AlbumId  sum(Milliseconds)
 -------  -----------------
-229      70665582         
-253      70213784         
-230      64854936         
-231      63289631         
-228      59780268         
+229      70665582
+253      70213784
+230      64854936
+231      63289631
+228      59780268
 ```
 
 ## Multiple `group by` columns
 ```sql
 select
-   MediaTypeId, 
-   GenreId, 
+   MediaTypeId,
+   GenreId,
    count(TrackId)
 from
    tracks
 group by
-   MediaTypeId, 
+   MediaTypeId,
    GenreId;
 ```

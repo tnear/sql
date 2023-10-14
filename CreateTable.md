@@ -10,12 +10,12 @@ sqlite> create table t (date text);
 ### Create table with multiple columns, primary key, not null, and unique modifiers
 
 ```sql
-CREATE TABLE contacts (
-	contact_id INTEGER PRIMARY KEY,
-	first_name TEXT NOT NULL,
-	last_name  TEXT NOT NULL,
-	email      TEXT NOT NULL UNIQUE,
-	phone      TEXT NOT NULL UNIQUE
+create table contacts (
+    contact_id integer primary key,
+    first_name text not null,
+    last_name  text not null,
+    email      text not null unique,
+    phone      text not null unique
 );
 ```
 

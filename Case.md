@@ -4,7 +4,7 @@ https://www.sqlitetutorial.net/sqlite-case/
 
 The `case` expression evaluates a list of conditions then returns an expression based on the evaluation.
 
-`case` is similar to `if-then-else` in other programming languages. 
+`case` is similar to `if-then-else` in other programming languages.
 
 `case` can be used in `where`, `order by`, `having`, `select`, `update`, and `delete.
 
@@ -14,7 +14,7 @@ case case_expression
      when when_expression_1 then result_1
      when when_expression_2 then result_2
      ...
-     [ else result_else ] 
+     [ else result_else ]
 end
 ```
 

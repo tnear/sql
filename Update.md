@@ -6,17 +6,21 @@ The `update` SQL statement modifies existing records in a table.
 ```sql
 update table_name
 set column1 = value1, column2 = value2, ...
-where condition; 
+where condition;
 ```
 
 Note: if the `where` clause is omitted, then *all* records will be updated.
 
-### Example
+### Update one column
+
+Update value '3' to '2'
+
 ```sql
 create table t (val1 int);
-insert into t values (1), (2), (4);
--- update value '4' to '3'
-update t set val1 = 3 where val1 = 4;
+insert into t values (1), (3);
+
+update t set val1 = 2
+where val1 = 3;
 
 select * from t;
 
@@ -24,5 +28,19 @@ val1
 ----
 1
 2
-3
+```
+
+### Update multiple columns
+```sql
+create table t (val1 int, val2 int);
+insert into t values (1, 2);
+
+update t set val1 = 10, val2 = 11
+where val1 = 1;
+
+select * from t;
+
+val1  val2
+----  ----
+10    11
 ```

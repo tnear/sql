@@ -10,7 +10,7 @@ A subquery is a nested query inside an outer query. Subqueries are enclosed in p
 select column_1
 from table_1
 where column_1 = (
-   select column_1 
+   select column_1
    from table_2
 );
 ```
@@ -21,7 +21,7 @@ The `=` is used when the subquery returns one result. For 1+ results, use `in` (
 
 ### Get all tracks from the album 'Greatest Hits II'
 
-The `tracks` and `albums` are joined by `albumId`. The nested query first gets the albumId. The outer query then uses that to query the tracks table for tracks which belong to that album. 
+The `tracks` and `albums` are joined by `albumId`. The nested query first gets the albumId. The outer query then uses that to query the tracks table for tracks which belong to that album.
 
 `> sqlite3 tutorial/media.db`
 ```sql
@@ -54,10 +54,10 @@ where SupportRepId in
 
 CustomerId  FirstName
 ----------  ---------
-1           Luis     
-2           Leon   
-3           Francois 
-4           Helena    
+1           Luis
+2           Leon
+3           Francois
+4           Helena
 ```
 
 ### Return albums less than 10 MB

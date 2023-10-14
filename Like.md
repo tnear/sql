@@ -36,9 +36,11 @@ GenreId  Name
 
 ### Case insensitive
 `like` queries are case insensitive. This query matches `finish` both lowercase and capitalized:
+
 `> sqlite3 tutorial/media.db`
 ```sql
-sqlite> select Name from tracks where Name like '%finish%';
+select Name from tracks
+where Name like '%finish%';
 
 Name
 ---------------------
