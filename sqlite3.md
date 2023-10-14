@@ -6,6 +6,8 @@ Syntax: `sqlite3 [options] [databaseFile] [SQL]`
 
 ### Create in-memory database
 `$ sqlite3`
+OR
+`$ sqlite3 :memory:`
 
 ### Create file database
 `$ sqlite3 data.db`

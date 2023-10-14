@@ -41,9 +41,7 @@ strftime('%Y-%m/%d')
 ### Date as `text`
 ```sql
 sqlite> create table t (date text);
-insert into t values ('2023-10-08');
-insert into t values ('2022-01-01');
-insert into t values ('2021-01-01');
+insert into t values ('2023-10-08'), ('2022-01-01'), ('2021-01-01');
 select * from t where date like '2022%';
 
 date
@@ -55,9 +53,9 @@ date
 ```sql
 
 sqlite> create table t (date integer);
-insert into t values (strftime('%s', '2023-01-01'));
-insert into t values (strftime('%s', '2022-01-01'));
-insert into t values (strftime('%s', '2021-01-01'));
+insert into t values (strftime('%s', '2023-01-01')),
+                     (strftime('%s', '2022-01-01')),
+                     (strftime('%s', '2021-01-01'));
 select datetime(date, 'auto') from t where date >= strftime('%s', '2022-01-01') and date < strftime('%s', '2023-01-01');
 
 datetime(date, 'auto')
@@ -70,9 +68,9 @@ datetime(date, 'auto')
 ```sql
 
 sqlite> create table t (date real);
-insert into t values (julianday('2023-01-01'));
-insert into t values (julianday('2022-01-01'));
-insert into t values (julianday('2021-01-01'));
+insert into t values (julianday('2023-01-01')),
+                     (julianday('2022-01-01')),
+                     (julianday('2021-01-01'));
 
 -- use datetime() to format output as a date
 select datetime(date) from t where date >= julianday('2022-01-01') and date < julianday('2023-01-01');
