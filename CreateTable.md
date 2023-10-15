@@ -30,10 +30,29 @@ create table contacts (
 
 ### Create index
 ```sql
-sqlite> create table table1 (id int, name text);
-sqlite> create index table1_index on table1 (id);
+create table table1 (id int, name text);
+create index table1_index on table1 (id);
 
 -- show indexes
 sqlite> .indexes
 table1_index
+```
+
+### Unique constraint
+The `unique` constraint ensures all values in a column are unique.
+
+```sql
+create table t (id int unique);
+insert into t values (1); -- okay
+
+insert into t values (1); -- error, duplicate value
+*Runtime error: UNIQUE constraint failed: t.id (19)*
+```
+
+Multiple unique constraints:
+```sql
+create table table_name(
+    ...,
+    unique(column_name1, column_name2, ...)
+);
 ```

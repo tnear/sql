@@ -1,7 +1,10 @@
-# SQLite configurations
+# SQLite configurations on startup
 
 # Show column names in SQLite:
 .headers on
 
-# Columnar mode
+# Show data in columnar mode
 .mode column
+
+# Enable foreign key constraints
+pragma foreign_keys = 1;
