@@ -2,7 +2,7 @@
 
 https://en.wikipedia.org/wiki/ACID
 
-ACID (atomicity, consistency, isolation, durability) is a set of properties of database transactions intended to guarantee data validity despite errors, crashes, or other issues. The most popular relational databases are typically ACID-compliant.
+ACID (atomicity, consistency, isolation, durability) is a set of properties of database transactions intended to guarantee data validity in the case of errors, crashes, or other issues. The most popular relational databases are typically ACID-compliant.
 
 ### Atomicity
 Atomicity ensures each transaction is either fully completed or entirely failed, leaving no partial state.

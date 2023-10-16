@@ -2,28 +2,28 @@
 
 https://www.sqlite.org/lang_datefunc.html
 
-SQLite does not have a dedicated date/time data type. Instead, it supports:
+SQLite does not have a dedicated date/time data type. Instead, it supports these types:
 - Text: ex: `('YYYY-MM-DD HH:MM:SS.SSS')`
-- Real: (floating-point): the number of days since November 24, 4714 B.C (Julian date)
 - Integer: the number of seconds since January 1st, 1970
+- Real: (floating-point): the number of days since November 24, 4714 B.C (Julian date)
 
 ## Specifiers
 
 | Specifier | Meaning                        |
 |-----------|--------------------------------|
-| %d        | day of month: 00               |
-| %f        | fractional seconds: SS.SSS     |
-| %H        | hour: 00-24                    |
-| %j        | day of year: 001-366           |
-| %J        | Julian day number (fractional) |
-| %m        | month: 01-12                   |
-| %M        | minute: 00-59                  |
-| %s        | seconds since 1970-01-01       |
-| %S        | seconds: 00-59                 |
-| %w        | day of week 0-6 with Sunday==0 |
-| %W        | week of year: 00-53            |
-| %Y        | year: 0000-9999                |
-| %%        | % (escape)                     |
+| `%d`      | day of month: 00               |
+| `%f`      | fractional seconds: SS.SSS     |
+| `%H`      | hour: 00-24                    |
+| `%j`      | day of year: 001-366           |
+| `%J`      | Julian day number (fractional) |
+| `%m`      | month: 01-12                   |
+| `%M`      | minute: 00-59                  |
+| `%s`      | seconds since 1970-01-01       |
+| `%S`      | seconds: 00-59                 |
+| `%w`      | day of week 0-6 with Sunday==0 |
+| `%W`      | week of year: 00-53            |
+| `%Y`      | year: 0000-9999                |
+| `%%`      | % (escape)                     |
 
 ### Format current date as `YYYY-MM/DD`
 `%Y` is year, `%m` is month, `%d` is day:
@@ -36,7 +36,7 @@ strftime('%Y-%m/%d')
 2023-10/11
 ```
 
-## Get all 2022 years
+## Get all records from 2022
 
 ### Date as `text`
 ```sql

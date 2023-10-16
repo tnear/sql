@@ -5,9 +5,9 @@ The `except` operator is similar to `union` except it returns the *set differenc
 ![Except](assets/Except.png)
 *Image: https://www.sqlitetutorial.net/sqlite-except/*
 
-The two `except` queries must result in th same number of columns ad compatible data types.
+The two `except` queries must result in the same number of columns and compatible data types.
 
-## Example
+## Examples
 
 Create two tables with the same structure but different values:
 ```sql

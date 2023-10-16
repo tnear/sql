@@ -6,7 +6,7 @@ The `case` expression evaluates a list of conditions then returns an expression 
 
 `case` is similar to `if-then-else` in other programming languages.
 
-`case` can be used in `where`, `order by`, `having`, `select`, `update`, and `delete.
+`case` can be used within `where`, `order by`, `having`, `select`, `update`, and `delete`.
 
 ### Syntax
 ```sql

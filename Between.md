@@ -2,7 +2,7 @@
 
 The `between` operator selects values within a given range. The values can be numbers, text, or dates.
 
-`between` is inclusive on *both* ends. Begin and end values are both included.
+`between` is inclusive on *both* ends.
 
 ### Numeric example: return prices between [10, 20] (inclusive)
 ```sql
@@ -17,7 +17,7 @@ where ProductName between 'car' and 'truck';
 ```
 
 ### Date example: return dates between Jan 1, 2010 and February 28, 2010
-This works with textual dates because when the schema saves dates in the format `yyyy-mm-dd`.
+This works with textual dates when the schema saves dates in the format `yyyy-mm-dd`.
 
 `> sqlite3 tutorial/media.db`
 ```sql

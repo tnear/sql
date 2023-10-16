@@ -1,5 +1,7 @@
 # Join
 
+https://www.sqlitetutorial.net/sqlite-join/
+
 A join in SQL combines columns from one or more tables.
 
 SQLite supports three join types:
@@ -7,10 +9,7 @@ SQLite supports three join types:
 1. Left join
 1. Cross join
 
-https://www.sqlitetutorial.net/sqlite-join/
-
 ## Inner join
-
 An inner join selects records that have matching values in both tables.
 
 In a Venn diagram, an inner join is the *intersection* portion.
@@ -19,7 +18,8 @@ In a Venn diagram, an inner join is the *intersection* portion.
 `> sqlite3 tutorial/media.db`
 
 ```sql
-sqlite> select artists.Name, albums.Title from albums, artists where artists.ArtistId = albums.ArtistId;
+select artists.Name, albums.Title from albums, artists
+where artists.ArtistId = albums.ArtistId;
 
 Name    Title
 ------  -------------------
@@ -50,13 +50,15 @@ TrackId  Track            Album                      Artist
 
 ## Left join
 
-A left outer join selects data starting in the left table and matching rows in the right table. If a row from the left table does not have a matching row in the right table, SQL inserts `NULL` values in the result. *All* rows from the left table will appear in the result set.
+A left outer join selects data starting in the left table and matching rows in the right table. If a row from the left table does *not* have a matching row in the right table, SQL inserts `NULL` values in the result. *All* rows from the left table will appear in the result set for a `left join`.
 
 In a Venn diagram, a left join is the left portion plus the intersecting portion.
 
 `> sqlite3 tutorial/media.db`
 ```sql
-sqlite>  select artists.Name, albums.Title from artists left join albums on artists.ArtistId = albums.ArtistId order by Name;
+sqlite> select artists.Name, albums.Title from artists
+left join albums on artists.ArtistId = albums.ArtistId
+order by Name;
 
 Name           Title
 -------------  -------------------
@@ -127,7 +129,7 @@ AlbumId  Title            ArtistId  ArtistId  Name
 select * from albums, artists;
 ```
 
-### Generate a deck of cards
+### Generate a deck of cards using `cross join`
 
 Rank has A, 2-10, J, Q, K (13 rows)
 

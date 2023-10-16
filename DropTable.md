@@ -2,7 +2,7 @@
 
 ### Syntax
 ```sql
-DROP TABLE [IF EXISTS] [schema_name.]table_name;
+drop table [if exists] [schema_name.]table_name;
 ```
 
 ### Example

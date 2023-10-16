@@ -8,7 +8,7 @@ insert into table (col1, col2, ...)
 values (value1, value2, ...);
 ```
 
-### Insert all columns
+### Insert all values for both columns
 ```sql
 create table t (val1 int, val2 int);
 insert into t values (1,2), (3,4), (5,6);
@@ -21,7 +21,7 @@ val1  val2
 5     6
 ```
 
-### Insert subset of columns
+### Insert specified columns
 For missing data, default values are inserted (`null` in this case).
 
 ```sql

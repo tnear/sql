@@ -14,7 +14,7 @@ create table [if not exists] [schema_name].table_name (
 
 ### Create table (basic)
 ```sql
-sqlite> create table t (date text);
+create table t (date text);
 ```
 
 ### Create table with multiple columns, primary key, not null, and unique modifiers

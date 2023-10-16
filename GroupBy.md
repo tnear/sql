@@ -36,7 +36,7 @@ This requires joining the `tracks` and `albums` tables on `AlbumId`.
 
 `> sqlite3 tutorial/media.db`
 ```sql
-select albums.albumId, albums.title, count(tracks.trackId)
+select albums.albumId, albums.title, count(tracks.trackId) as TrackCount
 from albums, tracks
 where tracks.albumId = albums.albumId
 group by tracks.albumId;

@@ -1,6 +1,6 @@
 # Glob
 
-`glob` in SQL is similar to `like` but are case sensitive. Additionally,, glob patterns use UNIX wildcards.
+`glob` in SQL is similar to `like` but is case sensitive. Additionally, glob patterns use UNIX wildcards.
 
 ### Wildcards
 | Character | Behavior                  |
@@ -9,7 +9,7 @@
 | `?`       | Matches one character     |
 | `[]`      | Matches one char in range |
 
-### Match prefix using `*`
+### Match suffix using `*`
 `> sqlite3 tutorial/media.db`
 ```sql
 sqlite> select name from tracks where name glob 'Wherever*';

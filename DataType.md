@@ -2,7 +2,7 @@
 
 ### Dynamic typing
 
-SQLite uses a *dynamic* type system. This is in contract to MySQL and PostgreSQL which use *static* typing. Dynamic typing is when the value(s) in the column determine its data type.
+SQLite uses a *dynamic* type system. This is in contrast to MySQL and PostgreSQL which use *static* typing. Dynamic typing is when the values in the column determine its data type.
 
 ### SQLite data types
 
@@ -21,4 +21,4 @@ SQLite supports five primitive data types known as *storage classes*:
 - date/time (use text, integer, or real instead).
 
 ### `typeof`
-The `typeof` function shows you what data type a value is interpreted as by SQLite. See [
+The `typeof` function shows you what data type a value is interpreted as by SQLite. See [typeof](Typeof.md) for more information.

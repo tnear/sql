@@ -2,7 +2,7 @@
 
 The `exists` operator checks if a subquery returns any rows. If the subquery returns 1+ rows, exists returns `true`. Otherwise, it returns `false` or `null`.
 
-The `in` operator can often be used instead of `exists`.
+Note: the `in` operator can often be used instead of `exists`.
 
 ### Find all customers who have an invoice
 
