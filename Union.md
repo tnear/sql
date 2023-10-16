@@ -2,7 +2,7 @@
 
 https://en.wikipedia.org/wiki/Set_operations_(SQL)
 
-The `union` operator combines the results of two SQL queries into a single table of all matching rows. The two queries must result in th same number of columns ad compatible data types. Duplicate records are removed unless `union all` is used.
+The `union` operator combines the results of two SQL queries into a single table of all matching rows. The two queries must result in the same number of columns and compatible data types. Duplicate records are removed unless `union all` is used.
 
 ## Example
 

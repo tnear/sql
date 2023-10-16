@@ -1,6 +1,6 @@
 # RowID
 
-By default, SQLite implicitly creates a 64-bit incrementing field called `rowid` for tables. `rowid` is always indexed and fast to query.
+By default, SQLite implicitly creates a 64-bit incrementing field called `rowid` for tables. `rowid` is always indexed and is fast to query.
 
 ```sql
 create table t (val integer);

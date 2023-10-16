@@ -6,13 +6,13 @@ https://www.sqlitetutorial.net/sqlite-order-by/
 
 ### Complete syntax
 ```sql
-SELECT
+select
    select_list
-FROM
+from
    table
-ORDER BY
-    column_1 ASC,
-    column_2 DESC;
+order by
+    column_1 asc,
+    column_2 desc;
 ```
 
 If `asc` or `desc` are left off, the default order is *ascending*.
@@ -20,7 +20,7 @@ If `asc` or `desc` are left off, the default order is *ascending*.
 ### Get longest tracks
 `> sqlite3 tutorial/media.db`
 ```sql
-sqlite> select * from tracks order by Milliseconds desc limit 4;
+select * from tracks order by Milliseconds desc limit 4;
 
 TrackId  Name                         Milliseconds  Bytes       Price
 -------  ---------------------------  ------------  ----------  -----

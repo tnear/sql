@@ -17,7 +17,7 @@ where column_1 = (
 
 ## The `=` operator when there is one result
 
-The `=` is used when the subquery returns one result. For 1+ results, use `in` (see example in next section).
+The `=` operator is used when the subquery returns one result. For 1+ results, use `in` (see example in next section).
 
 ### Get all tracks from the album 'Greatest Hits II'
 
@@ -62,7 +62,7 @@ CustomerId  FirstName
 
 ### Return albums less than 10 MB
 
-The subquery groups by albumId so that tracks of that album are grouped together. `having` applies criteria to these groups so that only records > 10 MB are left. Lastly, the outer query uses the subqueries albumId to get the title of the albums.
+The subquery groups by `albumId` so that tracks of that album are grouped together. `having` applies criteria to these groups so that only records > 10 MB are left. Lastly, the outer query uses the subqueries albumId to get the title of the albums.
 
 `> sqlite3 tutorial/media.db`
 ```sql

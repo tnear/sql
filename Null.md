@@ -4,5 +4,5 @@
 
 ```sql
 select * from table
-where Property is null
+where Property is null;
 ```
