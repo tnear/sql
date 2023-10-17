@@ -46,3 +46,15 @@ The index order is important. SQLite maintains a sorted list. The example above 
 - `id`
 - `id`, `val`
 - `id`, `val`, `name`
+
+### Drop index
+`drop index [if exists] index_name;`
+
+### Index expression
+
+```sql
+create index customers_length_company 
+on customers(length(company));
+```
+
+See [Explain](Explain.md) for a full example.
