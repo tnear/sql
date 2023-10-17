@@ -32,3 +32,31 @@ cid  name      type           notnull  dflt_value  pk
 0    ArtistId  INTEGER        1                    1
 1    Name      NVARCHAR(120)  0                    0
 ```
+
+## index_list
+`index_list` shows detailed metadata on the indexes in the specified table.
+
+```sql
+create table table1 (id int, name text);
+create index table1_index on table1 (id);
+pragma index_list('table1');
+
+seq  name          unique  origin  partial
+---  ------------  ------  ------  -------
+0    table1_index  0       c       0
+```
+
+## index_info
+`index_info` shows what columns are in a specified index.
+
+```sql
+create table table1 (id int, name text, val real);
+create index table1_index on table1 (id, val, name);
+
+pragma index_info('table1_index');
+seqno  cid  name
+-----  ---  ----
+0      0    id
+1      2    val
+2      1    name
+```

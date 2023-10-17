@@ -28,16 +28,6 @@ create table contacts (
 );
 ```
 
-### Create index
-```sql
-create table table1 (id int, name text);
-create index table1_index on table1 (id);
-
--- show indexes
-sqlite> .indexes
-table1_index
-```
-
 ### Unique constraint
 The `unique` constraint ensures all values in a column are unique.
 
