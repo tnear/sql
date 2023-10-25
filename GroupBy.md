@@ -4,7 +4,7 @@
 
 SQLite supports these aggregate functions: `avg, count, group_concat, max, min, sum`.
 
-The `having` constraint is often used with `group by` to apply criteria.
+The `having` constraint is often used with `group by` to apply criteria to the groups.
 
 ## Count
 `count(X)` returns a count of the number of times that `X` is not null in a group.

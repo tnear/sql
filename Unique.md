@@ -2,7 +2,7 @@
 The `unique` constraint ensures all values in a column are unique.
 
 ```sql
-create table t (id int unique);
+create table t (id integer unique);
 insert into t values (1); -- okay
 
 insert into t values (1); -- error, duplicate value

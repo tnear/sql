@@ -84,6 +84,19 @@ OR, from terminal:
 
 `$ sqlite3 db.db '.read file.sql'`
 
+## .system: run a system command
+This is useful for running a command without having to leave the SQLite environment.
+
+`sqlite> .system dir`
+```
+10/18/2023  10:32 AM    <DIR>          .
+10/18/2023  10:32 AM    <DIR>          ..
+10/18/2023  12:49 PM                54 .gitignore
+10/18/2023  10:32 AM    <DIR>          .vscode
+10/16/2023  08:22 AM               825 ACID.md
+<truncated>
+```
+
 ## .version: version information
 ```sql
 sqlite> .version

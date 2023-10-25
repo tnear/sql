@@ -2,7 +2,7 @@
 
 Write-ahead logging is a technique for providing atomicity and durability in database systems. In SQLite, WAL is newer than the *rollback journal*, which is a different mechanism for achieving atomicity and durability.
 
-A WAL is an *append-only* disk structure used for crash and transaction recovery. Changes are first recorded in the log before changes are written to the database.
+A WAL is an *append-only* disk structure used for crash and transaction recovery. Changes are first recorded in the log before they are written to the database.
 
 ### Comparison of WAL to rollback journal
 A rollback journal copies the *old* version of changes to another file so that they can be copied back to the main database when rolling back.
@@ -23,5 +23,5 @@ A system may crash at any point in writing data to a database. Upon restarting, 
 - Disk I/O operations are more sequential and therefore faster.
 
 ### Disadvantages of WAL over rollback journal
-- WAL does not work over a network file system
+- WAL does not work over a network file system (NFS).
 - WAL is slightly slower (~2%) for read-heavy applications where writes are rare.

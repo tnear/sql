@@ -9,11 +9,9 @@ select * from customers
 where Country in ('Germany', 'France', 'UK');
 ```
 
-### Subquery
-
+### Get the albums for a particular artist
 `> sqlite3 tutorial/media.db`
 
-#### Get the albums for a particular artist
 ```sql
 select AlbumID from Albums where ArtistId = 248;
 

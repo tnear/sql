@@ -5,7 +5,7 @@ The `delete` statement in SQL removes records from a table.
 ### Syntax
 ```sql
 delete from <table>
-where <search_condition>
+where <search_condition>;
 ```
 
 ### Example

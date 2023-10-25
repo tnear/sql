@@ -14,7 +14,7 @@ An inner join selects records that have matching values in both tables.
 
 In a Venn diagram, an inner join is the *intersection* portion.
 
-### Example using "implicit join" notation (no `join` keyword)
+### Example using *implicit join* notation (no `join` keyword)
 `> sqlite3 tutorial/media.db`
 
 ```sql

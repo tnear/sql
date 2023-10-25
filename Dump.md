@@ -29,6 +29,6 @@ INSERT INTO albums VALUES(1,'...',1);
 
 ### Dump specific table
 ```sql
-.dump tracks
+.dump [table]
 ```
 

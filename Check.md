@@ -23,6 +23,8 @@ insert into contact values (123); -- errors (3 digits)
 ```
 
 ### Table-level check
+Table-level checks allow for multi-property constraints.
+
 ```sql
 create table products (
     product_id   integer         primary key,

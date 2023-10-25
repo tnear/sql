@@ -8,13 +8,13 @@ create index table1_index on table1 (id);
 ```
 
 ### List indexes
-```
+```sql
 sqlite> .indexes
 table1_index
 ```
 
 ### Index metadata
-```
+```sql
 sqlite> pragma index_list('table1');
 
 seq  name          unique  origin  partial

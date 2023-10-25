@@ -19,7 +19,8 @@ Update value '3' to '2'
 create table t (val1 int);
 insert into t values (1), (3);
 
-update t set val1 = 2
+update t
+set val1 = 2
 where val1 = 3;
 
 select * from t;
@@ -35,7 +36,8 @@ val1
 create table t (val1 int, val2 int);
 insert into t values (1, 2);
 
-update t set val1 = 10, val2 = 11
+update t
+set val1 = 10, val2 = 11
 where val1 = 1;
 
 select * from t;

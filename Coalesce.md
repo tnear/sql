@@ -13,6 +13,7 @@ select coalesce(null, null);   -- returns null
 ### Practical example
 
 This query returns numerous null values:
+
 `> sqlite3 tutorial/media.db`
 ```sql
 select firstName, company

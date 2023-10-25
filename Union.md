@@ -32,7 +32,7 @@ v1
 ^Note that duplicates (2, 3) are removed the field name of the result set is from the first table.
 
 ## `Union all`
-`Union all` does not remove duplicate records and therefore runs faster than `union`.
+`union all` does *not* remove duplicate records and therefore runs faster than `union`.
 
 This example uses the same tables from above. With `union all`, we now see duplicate rows in the result set:
 

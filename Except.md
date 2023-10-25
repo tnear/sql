@@ -21,7 +21,7 @@ insert into t2 values (2), (3), (4);
 Now, use an `except` query to get the setdiff between `t1` and `t2`:
 ```sql
 select * from t1
-union
+except
 select * from t2;
 
 v1

@@ -1,6 +1,6 @@
 # Key
 
-A *key* in a relational database is a unique identifier for a record in a table. Keys are often used to [Join](Join.md) tables in queries.
+A *key* in a relational database is a unique identifier for a record in a table. Keys are often used to [join](Join.md) tables in queries.
 
 ## Primary key
 Each table in SQLite may have at most one primary key. They are denoted by the keywords `primary key`.

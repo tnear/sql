@@ -3,7 +3,7 @@
 ## Explain query plan
 https://www.sqlitetutorial.net/sqlite-index-expression/
 
-`explain query plan` describes a high-level description of the plan that SQLite uses to implement specific SQL query. This command can be useful for seeing if SQLite uses an index.
+`explain query plan` provides a high-level description of the plan that SQLite uses to implement specific SQL query. This command can be useful for seeing if SQLite uses an index.
 
 ### Determine is SQLite is performing an indexed query
 `> sqlite3 tutorial/media.db`
@@ -22,7 +22,9 @@ QUERY PLAN
 `--USE TEMP B-TREE FOR ORDER BY
 ```
 
-From the output above, you can see that it scans the entire `customers` table to order by length. To improve this, index `length(company)` then repeat the query:
+From the output above, you can see that it scans the entire `customers` table to order by length.
+
+To improve this, index `length(company)` then repeat the query:
 
 ```sql
 create index customers_length_company
