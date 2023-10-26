@@ -6,8 +6,8 @@ A SQLite `trigger` is a named database object that is executed automatically whe
 
 ### Syntax
 ```sql
-create trigger [if not exists] trigger_name 
-    [before|after|instead of] [insert|update|delete] 
+create trigger [if not exists] trigger_name
+    [before|after|instead of] [insert|update|delete]
     on table_name
     [when condition]
 begin
@@ -30,7 +30,7 @@ create table leads (
 
 Next, create a trigger.
 ```sql
-create trigger validate_email_before_insert_leads 
+create trigger validate_email_before_insert_leads
     before insert on leads
 begin
     select

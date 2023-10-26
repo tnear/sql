@@ -2,7 +2,7 @@
 
 The `coalesce()` function accepts two or more arguments and returns the first non-null value. If all inputs are null, it returns null.
 
-Coalesce is useful to substitute a default value for a null value.
+Coalesce is useful to substitute a default value for a null value. [ifnull](IfNull.md) is similar to `coalesce` but is limited to two arguments.
 
 ### Basic usage
 ```sql

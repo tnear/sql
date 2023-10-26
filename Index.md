@@ -53,7 +53,7 @@ The index order is important. SQLite maintains a sorted list. The example above 
 ### Index expression
 
 ```sql
-create index customers_length_company 
+create index customers_length_company
 on customers(length(company));
 ```
 

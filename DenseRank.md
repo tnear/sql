@@ -42,9 +42,9 @@ select
     name,
     milliseconds,
     dense_rank () over
-    ( 
+    (
         partition by albumId
-        order by milliseconds 
+        order by milliseconds
     ) as LengthRank
 from tracks;
 

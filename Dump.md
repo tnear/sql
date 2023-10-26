@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS "albums"
     [AlbumId] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
     [Title] NVARCHAR(160)  NOT NULL,
     [ArtistId] INTEGER  NOT NULL,
-    FOREIGN KEY ([ArtistId]) REFERENCES "artists" ([ArtistId]) 
+    FOREIGN KEY ([ArtistId]) REFERENCES "artists" ([ArtistId])
 		ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 INSERT INTO albums VALUES(1,'...',1);

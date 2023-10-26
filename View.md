@@ -9,7 +9,7 @@ An SQL view is read-only. You cannot `insert`, `delete`, or `update` into a view
 ## Syntax
 ```sql
 create [temp] view [if not exists] view_name[(column-name-list)]
-as 
+as
    select-statement;
 ```
 
@@ -18,8 +18,8 @@ First, create a query that you want to assign a view. Then prefix that query wit
 
 `> sqlite3 tutorial/media.db`
 ```sql
-create view v_tracks 
-as 
+create view v_tracks
+as
 select
     trackid,
     tracks.name,

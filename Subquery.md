@@ -21,7 +21,7 @@ The `=` operator is used when the subquery returns one result. For 1+ results, u
 
 ### Get all tracks from the album 'Greatest Hits II'
 
-The `tracks` and `albums` are joined by `albumId`. The nested query first gets the albumId. The outer query then uses that to query the tracks table for tracks which belong to that album.
+The `tracks` and `albums` are joined by `albumId`. The nested query first gets the `albumId`. The outer query then uses that to query the tracks table for tracks which belong to that album.
 
 `> sqlite3 tutorial/media.db`
 ```sql
@@ -42,7 +42,7 @@ TrackId  Name                       AlbumId
 
 The `in` operator checks for the existence of a single value within a set of values.
 
-### Return  customers whose sale representatives are in Canada
+### Return customers whose sale representatives are in Canada
 
 The `customers` and `employees` tables are linked by the `SupportRepId` (customers) and `EmployeeId` (employees) fields.
 
@@ -73,3 +73,64 @@ where albumId in
      having sum(bytes) < 10000000)
 order by title;
 ```
+
+### Named subquery + `left join`
+This query gets a list of all teachers and how many students they teach.
+
+The subquery gets the number of students for all teachers who have a non-zero number of students. The subquery also has a name, `StudentSize` because its values will be referenced by the outer query.
+
+The outer query uses `left join` with the Teachers table because we need *all* teachers (including ones with zero student count). The `ifnull` function translates `null` values coming from `left join` into zeros. The outer query joins the TeacherID from the Teacher table with the TeacherID from the inner query which comes from the Courses table.
+
+```sql
+select Teachers.TeacherID, Teachers.TeacherName, ifnull(StudentSize.Number, 0) as StudentCount
+from Teachers left join
+    (
+        select TeacherID, count(Courses.TeacherID) as Number from Courses, StudentCourses
+where Courses.CourseID = StudentCourses.CourseID
+group by Courses.TeacherID
+    ) StudentSize
+on Teachers.TeacherID = StudentSize.TeacherID;
+
+TeacherID  TeacherName  StudentCount
+---------  -----------  ------------
+1          Chen         3
+2          Jones        4
+3          Smith        0
+4          Wang         0
+```
+
+<!--
+Full data and schema:
+
+SQLite:
+```sql
+create table Courses (CourseID integer primary key, CourseName text, TeacherID integer);
+create table Teachers (TeacherID integer primary key, TeacherName text);
+create table Students (StudentID integer primary key, StudentName text);
+create table StudentCourses (CourseID integer, StudentID integer, primary key (CourseID, StudentID));
+
+insert into Teachers (TeacherName) values ('Chen');
+insert into Teachers (TeacherName) values ('Jones');
+insert into Teachers (TeacherName) values ('Smith');
+insert into Teachers (TeacherName) values ('Wang');
+
+insert into Students (StudentName) values ('Adam');
+insert into Students (StudentName) values ('Chris');
+insert into Students (StudentName) values ('Michael');
+insert into Students (StudentName) values ('Robert');
+insert into Students (StudentName) values ('Zachary');
+
+insert into Courses (CourseName, TeacherID) values ('Security', 1);
+insert into Courses (CourseName, TeacherID) values ('Networking', 2);
+insert into Courses (CourseName, TeacherID) values ('Cryptography', 3);
+insert into Courses (CourseName, TeacherID) values ('Operating Systems', 1);
+
+insert into StudentCourses values (1, 1);
+insert into StudentCourses values (1, 2);
+insert into StudentCourses values (2, 1);
+insert into StudentCourses values (2, 2);
+insert into StudentCourses values (2, 3);
+insert into StudentCourses values (2, 4);
+insert into StudentCourses values (4, 1);
+```
+-->

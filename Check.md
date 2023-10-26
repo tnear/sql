@@ -31,9 +31,9 @@ create table products (
     product_name text            not null,
     list_price   decimal (10, 2) not null,
     discount     decimal (10, 2) not null default 0,
-    check (list_price >= discount and 
-        discount >= 0 and 
-        list_price >= 0) 
+    check (list_price >= discount and
+        discount >= 0 and
+        list_price >= 0)
 );
 ```
 
