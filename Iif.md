@@ -1,4 +1,4 @@
-# Iif
+# iif
 
 The `iif()` function allows adding if-else logic go queries.
 

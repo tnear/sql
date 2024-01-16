@@ -2,7 +2,7 @@
 
 SQLite's `ifnull` function accepts two arguments and returns the first non-null argument.
 
-`ifnull` is similar to [coalesce](Coalesce.md) with two arguments.
+`ifnull` is similar to [coalesce](Coalesce.md) but is limited to two arguments.
 
 ### Basic usage
 ```sql

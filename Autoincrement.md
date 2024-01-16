@@ -17,7 +17,7 @@ val  val2
 ```
 
 ### Disk full error
-If you insert a value with a maximum integer value (9223372036854775807), the next insertion will throw a disk full error:
+If you insert a value with a maximum integer value (9223372036854775807), the next insertion will throw a database full error:
 
 ```sql
 create table t (val integer primary key autoincrement, val2 integer);

@@ -31,6 +31,17 @@ val1
 2
 ```
 
+### `changes()`
+The `changes` function returns a count of the number of records modified.
+
+```sql
+select changes();
+
+changes()
+---------
+4
+```
+
 ### Update multiple columns
 ```sql
 create table t (val1 int, val2 int);

@@ -17,7 +17,7 @@ OR
 ## Exit sqlite3 CLI
 `sqlite> .exit  # or .quit or Ctrl+D`
 
-## .tables: list tables
+## .tables: list all tables
 ```sql
 sqlite> .tables
 table1 table2

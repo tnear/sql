@@ -1,8 +1,8 @@
 # Having
 
-A `having` clause dictates that only rows should be returned when they meet the specified criteria.
+A `having` clause returns rows only when they meet a specified criteria.
 
-`having` is enforced *after* `group by` groups results into buckets. `having` filters out rows which do not meet the constraints.
+`having` is enforced *after* the `group by` clause groups results into buckets. `having` filters out rows which do not meet the constraints.
 
 ### Get albums with between 26 and 60 songs
 

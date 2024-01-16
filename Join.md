@@ -92,7 +92,7 @@ The Cartesian product is the set of all ordered pairs (*a*, *b*) where *a* is in
 
 ### Example
 
-Find the Cartesian product of: `A = {1, 2} B = {a, b, c}`
+Find the Cartesian product of: `A = {1, 2}, B = {a, b, c}`
 
 `A x B = { (1,a),(1,b),(1,c),(2,a),(2,b),(2,c) }`
 
@@ -152,7 +152,7 @@ Self-join is useful for querying parent/child relationships.
 
 ### Get all direct reports for all managers
 
-The employees table has ReportsTo column if they have a manager:
+The employees table has `ReportsTo` column if they have a manager:
 
 `> sqlite3 tutorial/media.db`
 ```sql

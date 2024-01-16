@@ -47,6 +47,9 @@ select * from t where date like '2022%';
 date
 ----------
 2022-01-01
+
+-- using between operator:
+select * from t where date between '2022-01-01' and '2022-12-31';
 ```
 
 ### Date as `integer`

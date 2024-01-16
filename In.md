@@ -9,7 +9,7 @@ select * from customers
 where Country in ('Germany', 'France', 'UK');
 ```
 
-### Get the albums for a particular artist
+### Get albums for a particular artist
 `> sqlite3 tutorial/media.db`
 
 ```sql

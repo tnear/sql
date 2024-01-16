@@ -1,6 +1,6 @@
 # Exists
 
-The `exists` operator checks if a subquery returns any rows. If the subquery returns 1+ rows, exists returns `true`. Otherwise, it returns `false` or `null`.
+The `exists` operator checks if a subquery returns any rows. If the subquery returns 1 or more rows, exists returns `true`. Otherwise, it returns `false` or `null`.
 
 Note: the `in` operator can often be used instead of `exists`.
 

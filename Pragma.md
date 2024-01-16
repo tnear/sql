@@ -69,7 +69,7 @@ Journal modes:
 - off: no rollback journal is created.
 
 ## page_size
-The default page size is 4096. For most applications, the default value works best. It can be configured through a `pragma` statement:
+The default page size is `4096`. For most applications, the default value works best. It can be configured through a `pragma` statement:
 
 `sqlite> pragma page_size=<bytes>;`
 
