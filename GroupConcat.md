@@ -1,6 +1,6 @@
 # Group Concat
 
-The `group_concat()` function is an aggregate function that concatenates all non-null values in a column. The default separator is comma (',').
+`group_concat()` is an aggregate function that concatenates all non-null values in a column. The default separator is comma (',').
 
 ### Syntax
 `group_concat(expression [,separator])`

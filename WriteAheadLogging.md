@@ -15,7 +15,7 @@ The default journal_mode is *delete* which uses a rollback journal. To switch to
 `sqlite> pragma journal_mode=wal;`
 
 ### How failures are handled
-A system may crash at any point in writing data to a database. Upon restarting, the system checks the log to learn if the last operation finished completely. The system consults the WAL and compare the current database state against the log. Based on this comparison, the program can decide to undo operations or continue to achieve a "safe" state.
+A system may crash at any point in writing data to a database. Upon restarting, the system checks the log to learn if the last operation finished completely. The system consults the WAL and compares the current database state against the log. Based on this comparison, the program can decide to undo operations or continue to achieve a "safe" state.
 
 ### Advantages of WAL over rollback journal
 - Faster for most scenarios.

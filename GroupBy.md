@@ -1,5 +1,7 @@
 # Group By
 
+https://www.sqlitetutorial.net/sqlite-group-by/
+
 `group by` tells SQL `select` to partition results into groups. The result of a `group by` query contains one row for each group. Aggregate functions can operate on these groups.
 
 SQLite supports these aggregate functions: `avg, count, group_concat, max, min, sum`.
@@ -59,18 +61,19 @@ There is a `Milliseconds` field which can be summed to find the total duration o
 
 `> sqlite3 tutorial/media.db`
 ```sql
-select albumId, sum(Milliseconds)
+select albumId, name, sum(Milliseconds)
 from tracks
 group by albumId
-order by sum(Milliseconds) desc;
+order by sum(Milliseconds) desc
+limit 5;
 
-AlbumId  sum(Milliseconds)
--------  -----------------
-229      70665582
-253      70213784
-230      64854936
-231      63289631
-228      59780268
+AlbumId  Name                             sum(Milliseconds)
+-------  -------------------------------  -----------------
+229      A Tale of Two Cities             70665582
+253      Battlestar Galactica, Pt. 1      70213784
+230      Lost (Pilot, Part 1) [Premiere]  64854936
+231      Man of Science, Man of Faith     63289631
+228      Genesis                          59780268
 ```
 
 ## Multiple `group by` columns
